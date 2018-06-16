@@ -18,10 +18,20 @@ if(guessesSoFar.indexOf(userGuess)< 0 && alphabetLetters.indexOf(userGuess) >=0)
 
 }
 
-if(letterToBeGuessed==userGuess){
+if(letterToBeGuessed===userGuess){
     wins++;
     console.log("You Won");
     guessesLeft=9;
     guessesSoFar=[];
-    letterToBeGuessed= alphabetLetters[Math.floor(Math.random)]
+    letterToBeGuessed= alphabetLetters[Math.floor(Math.random()* alphabetLetters.length)];
+    console.log("Wins:"+wins+"Losses:"+ losses+"GuessesLeft:"+guessesLeft+"Guesses so far:"+guessesSoFar+"computer picked:"+letterToBeGuessed);
+
+}
+if (guessesLeft===0){
+    losses++;
+    console.log("You Lost!");
+    guessesLeft=9;
+    guessesSofar=[];
+    letterToBeGuessed=alphabetLetters[Math.floor(Math.random()* alphabetLetters.length)];
+    console.log("Wins:"+wins+"Losses:"+losses+"GuessesLeft:"+guessesLeft+"Guesses so far:"+guessesSoFar+"Computer picked:"+ letterToBeGuessed);
 }
